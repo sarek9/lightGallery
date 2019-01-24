@@ -1643,6 +1643,10 @@
     };
 
     Fullscreen.prototype.exitFullscreen = function() {
+        if (!window.fullScreen) {
+            return;
+        }
+
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.msExitFullscreen) {
